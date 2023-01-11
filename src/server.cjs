@@ -20,7 +20,7 @@ app.engine('html', cons.swig);
 app.set('views', path.resolve(__dirname, '../public'));
 app.set('view engine', 'html');
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.resolve(__dirname, '../public')));
 app.use('/', viewRouter);
 
 io.on('connection', socket => {
