@@ -17,6 +17,7 @@ const { userJoin, getCurrentUser } = require('./utils/user.cjs');
 const PORT = process.env.PORT || 5000;
 
 app.engine('html', cons.swig);
+console.log(path.join(__dirname, 'public'));
 app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'html');
 
