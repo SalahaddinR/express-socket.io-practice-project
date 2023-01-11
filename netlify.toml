@@ -1,0 +1,7 @@
+[build]
+    functions="src"
+
+[[redirects]]
+    to="/.netlify/functions/server/:splat"
+    from="/*"
+    status=200
