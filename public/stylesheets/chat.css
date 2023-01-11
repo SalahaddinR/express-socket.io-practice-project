@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0; margin: 0;
+}
+
+body {
+    display: flex;
+    width: 100%; height: 100%;
+    background-color: #F6F6F6;
+
+}
+
+.container {
+    width: 100%; display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .upperPannel {
+    display: grid; width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: flex-start;
+    align-items: center;
+    background-color: #6F73D2;
+    padding: 20px 40px;
+}
+
+
+.container .upperPannel h1 {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+}
+
+.container .upperPannel .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-self: flex-end;
+}
+
+.container .upperPannel .buttonGroup .leaveChatBtn {
+    width: 180px; height: 60px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: #7681B3; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    outline: none; border: none;
+}
+
+.container .upperPannel .buttonGroup .leaveChatBtn:active {
+    background-color: #939ab9;
+}
+
+.container .messages {
+    width: 100%; display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .messages .messages-content {
+    display: flex; width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px; overflow: scroll;
+    max-height: 70vh; height: 100%;
+    gap: 10px; 
+}
+
+.container .messages .messages-content .message {
+    display: flex; width: 100%;
+    background-color: #a3afe6;
+    flex-direction: column;
+    padding: 5px 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.container .messages .messages-content .message:last-child {
+    margin-bottom: 50px;
+}
+
+
+.container .messages .messages-content .message .meta {
+    display: grid; width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container .messages .messages-content .message .meta .time {
+    justify-self: flex-end;
+}
+
+
+.container .messages .messages-content::-webkit-scrollbar {
+    display: none;
+}
+
+.container .messages .wrapper .input-group {
+    position: absolute;
+    display: grid; width: 100%;
+    grid-template-columns: 70% 30%;
+    padding: 20px 70px; gap: 40px;
+    bottom: 0; left: 0;
+    background-color: #6F73D2;
+}
+
+.container .messages .wrapper .input-group .messageField {
+    padding: 15px 20px; width: 100%;
+    outline: none; border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 17px;
+}
+
+.container .messages .wrapper .input-group .sendBtn {
+    justify-self: flex-start;
+    width: 180px; height: 60px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: #7681B3; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    outline: none; border: none;
+}
+
+.container .messages .wrapper .input-group .sendBtn:active {
+    background-color: #939ab9;
+}
+
+
+@media (max-width: 500px) {
+    .container .upperPannel h1 {
+        font-size: 15px;
+    }
+
+    .container .upperPannel .buttonGroup .leaveChatBtn  {
+        width: 120px; height: 40px;
+        font-size: 14px;
+    }
+
+    .container .messages .wrapper .input-group {
+        padding: 20px; gap: 10px;
+    }
+
+
+    .container .messages .wrapper .input-group  {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .container .messages .wrapper .input-group .sendBtn {
+        width: 100%;
+    }
+}
