@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+const serverless = require('serverless-http');
 const socketio = require('socket.io');
 const path = require('path');
 const dotenv = require('dotenv').config();
@@ -43,6 +44,4 @@ io.on('connection', socket => {
 
 })
 
-server.listen(PORT, () => {
-    console.log(`server started in http://localhost:${PORT}`)
-})
+module.exports.handler = serverless(server);
