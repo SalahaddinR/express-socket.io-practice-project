@@ -17,10 +17,10 @@ const { userJoin, getCurrentUser } = require('./utils/user.cjs');
 const PORT = process.env.PORT || 5000;
 
 app.engine('html', cons.swig);
-app.set('views', path.join(__dirname, '/src/public'));
+app.set('views', path.join(__dirname, './netlify/functions/public'));
 app.set('view engine', 'html');
 
-app.use(express.static(path.join(__dirname, '/src/public')));
+app.use(express.static(path.join(__dirname, './netlify/functions/public')));
 app.use('/', viewRouter);
 
 io.on('connection', socket => {
