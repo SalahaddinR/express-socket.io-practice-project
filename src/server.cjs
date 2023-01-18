@@ -1,6 +1,5 @@
 const express = require('express');
 const http = require('http');
-const serverless = require('serverless-http');
 const socketio = require('socket.io');
 const path = require('path');
 const dotenv = require('dotenv').config();
@@ -12,12 +11,11 @@ const io = socketio(server);
 
 const viewRouter = require('./routers/viewRouter.cjs');
 const formatMessage = require('./utils/mesage.cjs');
-const { userJoin, getCurrentUser } = require('./utils/user.cjs');
+const { userJoin} = require('./utils/user.cjs');
 
 const PORT = process.env.PORT || 5000;
 
 app.engine('html', cons.swig);
-console.log(path.join(__dirname, 'public'));
 app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'html');
 
@@ -45,4 +43,7 @@ io.on('connection', socket => {
 
 })
 
-module.exports.handler = serverless(server);
+
+server.listen(PORT, () => {
+    console.log(`server started at http://localhost:${PORT}/`)
+})
